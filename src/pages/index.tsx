@@ -9,14 +9,18 @@ import MyComp from './qcomps/firstcomp'
 import Bio from './qcomps/bios'
 import TodoList from './qcomps/todos'
 import Profile from './components/profile_props'
-import Gallery from './qcomps/gallery_props'
+// import Gallery from './qcomps/gallery_props'
 import Square from './components/square'
 import PackingList from './components/props_item'
 import List from './qcomps/list_keys_id'
 import RecipeList from './qcomps/recipes'
+// import Gallery from './components/whyState'
+import Gallery from './components/state'
+import Form from './qcomps/stuckForm'
+import FeedbackForm from './qcomps/thankYouCrash'
 
 export default function Home() {
   return (
-    <RecipeList />
+    <FeedbackForm />
   )
 }
