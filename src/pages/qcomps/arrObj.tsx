@@ -9,9 +9,10 @@ const initialList = [
 ];
 
 export default function BucketList() {
-  const [myList, setMyList] = useState(initialList);
-  const [yourList, setYourList] = useState(
-    initialList
+
+  // fix by creating deep copy instead of shallow
+  const [myList, setMyList] = useState(initialList.map(e => ({ ...e })));
+  const [yourList, setYourList] = useState(initialList.map(e=> ({ ...e }))
   );
 
   function handleToggleMyList(artworkId: number, nextSeen: boolean) {

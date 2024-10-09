@@ -5,10 +5,12 @@ export default function RequestTracker() {
   const [completed, setCompleted] = useState(0);
 
   async function handleClick() {
-    setPending(pending + 1);
-    await delay(3000);
-    setPending(pending - 1);
-    setCompleted(completed + 1);
+
+    //buggy code fixes below
+    setPending(prevPending => prevPending + 1); //  most recent state
+    await delay(2000);  // change to 2 secs
+    setPending(prevPending => prevPending - 1); // decrement recent pending state
+    setCompleted(prevCompleted => prevCompleted + 1); // increment based on competed prev
   }
 
   return (
